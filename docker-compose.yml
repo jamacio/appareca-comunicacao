@@ -1,0 +1,9 @@
+services:
+  app:
+    image: php:8.5-apache
+    container_name: appareca-site
+    ports:
+      - "5001:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/apache.conf:/etc/apache2/conf-enabled/appareca.conf:ro
