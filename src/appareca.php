@@ -19,7 +19,7 @@ include __DIR__ . '/partials/header.php';
     <div class="container">
       <div class="founder-layout">
         <div class="founder-photo reveal">
-          <img src="<?= $baseUrl ?>/images/leticia.jpg" alt="Leticia, fundadora da Appareça Comunicação Estratégica" loading="lazy">
+          <img src="<?= $baseUrl ?>/images/leticia.jpeg" alt="Leticia, fundadora da Appareça Comunicação Estratégica" loading="lazy">
         </div>
         <div class="founder-text">
           <div class="section-tag reveal">Quem está por trás</div>

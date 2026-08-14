@@ -5,6 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= htmlspecialchars($pageTitle) ?></title>
   <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
+  <meta name="author" content="<?= htmlspecialchars($siteName) ?>">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#e32a89">
+  <link rel="canonical" href="<?= htmlspecialchars($pageUrl) ?>">
+
+  <!-- Favicon -->
+  <link rel="icon" href="<?= $baseUrl ?>/images/favicon.ico" sizes="48x48" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?= $baseUrl ?>/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?= $baseUrl ?>/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?= $baseUrl ?>/images/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="<?= htmlspecialchars($siteName) ?>">
+  <meta property="og:title" content="<?= htmlspecialchars($pageTitle) ?>">
+  <meta property="og:description" content="<?= htmlspecialchars($pageDescription) ?>">
+  <meta property="og:url" content="<?= htmlspecialchars($pageUrl) ?>">
+  <meta property="og:image" content="<?= htmlspecialchars($siteImage) ?>">
+  <meta property="og:image:alt" content="Logo <?= htmlspecialchars($siteName) ?>">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle) ?>">
+  <meta name="twitter:description" content="<?= htmlspecialchars($pageDescription) ?>">
+  <meta name="twitter:image" content="<?= htmlspecialchars($siteImage) ?>">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Appareça Comunicação Estratégica",
+    "url": "<?= $siteUrl ?>/",
+    "logo": "<?= $siteImage ?>",
+    "description": "Agência estratégica de comunicação digital. Estratégia, conteúdo e comunicação para fortalecer sua presença digital.",
+    "email": "apparecacomunicacao@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/apparecacomunicacao/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-12-99168-7097",
+      "contactType": "customer service",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
