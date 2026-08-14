@@ -73,8 +73,57 @@
         <a href="<?= $baseUrl ?>/appareca" class="<?= $currentPage === 'appareca' ? 'active' : '' ?>">A Appareça</a>
         <a href="<?= $baseUrl ?>/contato" class="btn btn-pink" style="padding:0.45rem 1.25rem">Fale com a Appareça</a>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <a href="<?= $baseUrl ?>/contato" class="btn btn-pink nav-cta-mobile">Fale conosco</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="mobileMenu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-top">
+      <a href="<?= $baseUrl ?>/" class="logo">
+        <img src="<?= $baseUrl ?>/images/logo.png" alt="Appareça Comunicação Estratégica">
+      </a>
+      <button class="mobile-close" data-menu-close aria-label="Fechar menu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-links" aria-label="Menu principal">
+      <a href="<?= $baseUrl ?>/" class="mobile-link <?= $currentPage === 'home' ? 'active' : '' ?>">
+        <span class="mobile-link-index">01</span>
+        <span class="mobile-link-label">Início</span>
+        <svg class="mobile-link-arrow" viewBox="0 0 18 14" width="18" height="14" fill="none" aria-hidden="true"><path d="M1 7h15M11 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="<?= $baseUrl ?>/solucoes" class="mobile-link <?= $currentPage === 'solucoes' ? 'active' : '' ?>">
+        <span class="mobile-link-index">02</span>
+        <span class="mobile-link-label">Soluções</span>
+        <svg class="mobile-link-arrow" viewBox="0 0 18 14" width="18" height="14" fill="none" aria-hidden="true"><path d="M1 7h15M11 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="<?= $baseUrl ?>/cases" class="mobile-link <?= $currentPage === 'cases' ? 'active' : '' ?>">
+        <span class="mobile-link-index">03</span>
+        <span class="mobile-link-label">Cases</span>
+        <svg class="mobile-link-arrow" viewBox="0 0 18 14" width="18" height="14" fill="none" aria-hidden="true"><path d="M1 7h15M11 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="<?= $baseUrl ?>/appareca" class="mobile-link <?= $currentPage === 'appareca' ? 'active' : '' ?>">
+        <span class="mobile-link-index">04</span>
+        <span class="mobile-link-label">A Appareça</span>
+        <svg class="mobile-link-arrow" viewBox="0 0 18 14" width="18" height="14" fill="none" aria-hidden="true"><path d="M1 7h15M11 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="<?= $baseUrl ?>/contato" class="mobile-link <?= $currentPage === 'contato' ? 'active' : '' ?>">
+        <span class="mobile-link-index">05</span>
+        <span class="mobile-link-label">Contato</span>
+        <svg class="mobile-link-arrow" viewBox="0 0 18 14" width="18" height="14" fill="none" aria-hidden="true"><path d="M1 7h15M11 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a href="<?= $baseUrl ?>/contato" class="btn btn-pink mobile-cta">Fale com a Appareça</a>
+      <div class="mobile-contact">
+        <div class="mobile-contact-label">Entre em contato</div>
+        <a href="mailto:apparecacomunicacao@gmail.com">apparecacomunicacao@gmail.com</a>
+        <a href="https://www.instagram.com/apparecacomunicacao/" target="_blank" rel="noopener">@apparecacomunicacao</a>
+      </div>
+    </div>
+  </div>

@@ -1,17 +1,64 @@
 (function () {
-  // Menu toggle
+  // Mobile menu
   var menuToggle = document.getElementById('menuToggle');
-  var navLinks = document.getElementById('navLinks');
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(function (l) {
-      l.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-      });
-    });
+  var mobileMenu = document.getElementById('mobileMenu');
+  var backdrop = document.getElementById('navBackdrop');
+
+  function closeMenu() {
+    document.body.classList.remove('menu-open');
+    if (mobileMenu) {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    }
+    if (backdrop) {
+      backdrop.classList.remove('show');
+      backdrop.setAttribute('aria-hidden', 'true');
+    }
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menu');
+    }
   }
+
+  function openMenu() {
+    document.body.classList.add('menu-open');
+    if (mobileMenu) {
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+    }
+    if (backdrop) {
+      backdrop.classList.add('show');
+      backdrop.setAttribute('aria-hidden', 'false');
+    }
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Fechar menu');
+    }
+  }
+
+  function toggleMenu() {
+    if (document.body.classList.contains('menu-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(function (l) {
+      l.addEventListener('click', closeMenu);
+    });
+    var closeBtn = mobileMenu.querySelector('[data-menu-close]');
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeMenu();
+  });
 
   // Navbar shadow on scroll
   var navbar = document.getElementById('navbar');
